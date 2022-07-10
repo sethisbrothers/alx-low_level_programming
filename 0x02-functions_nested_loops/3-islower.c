@@ -1,14 +1,13 @@
-#include "main.h"
+#include "holberton.h"
+
 /**
- * _islower - determine case of an alpha character
- *
- * @c: - ascii integer value of the character
- *
- * Return: 1 if lowercase, 0 if uppercase
+ * _islower - check for lower case letter
+ * @c : character to check the case
+ * Return:0 or 1
  */
+
 int _islower(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
+	return (c >= 97 && c <= 122);
+
 }

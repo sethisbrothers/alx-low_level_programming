@@ -1,23 +1,30 @@
-#include "main.h"
+#include "holberton.h"
+
 /**
- * print_sign - returns whether a number is positive, negative or zero
- *
- * @n: integer to return the sign of
- *
- * Return: 1 if positive, 0 if zero, -1 if negative
+ * print_sign - check numers
+ * @n : number to check
+ * Return:0 or 1
  */
+
 int print_sign(int n)
 {
-	if (n > 0)
-	{
-		_putchar('+');
-		return (1);
-	}
-	if (n == 0)
-	{
-		_putchar('0');
-		return (0);
-	}
+int test;
+
+if (n > 0)
+{
+	test = 1;
+	_putchar('+');
+}
+else if (n == 0)
+{
+	test = 0;
+	_putchar('0');
+}
+else
+{
+	test = -1;
 	_putchar('-');
-	return (-1);
+}
+
+return (test);
 }

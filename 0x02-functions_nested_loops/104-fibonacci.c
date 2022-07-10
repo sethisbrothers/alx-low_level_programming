@@ -1,51 +1,26 @@
-#include "main.h"
-
-#define MAXULI9 10000000000
-
+#include <stdio.h>
 /**
- * main - prints the first 100 Fibonacci numbers, starting with 1 and 2,
- * followed by a new line, without using long long, arrays or dynamic
- * allocation
- *
- * Return: 0 on success
+ * main - main block
+ * Description: computes and prints the sum of all the multiples of 3 or
+ * 5 below 1024 (excluded), followed by a new line
+ * Return: 0
  */
 int main(void)
 {
-	int i;
-	unsigned long onebeforefirst = 0, onebeforesecond = 0;
-	unsigned long twobeforefirst = 0, twobeforesecond = 0;
-	unsigned long currentfirst = 0, currentsecond = 0;
+	int i = 0;
+	unsigned long int a = 0, b = 1, next = 0;
 
-	onebeforesecond = 2;
-	twobeforesecond = 1;
-	currentsecond = onebeforesecond + twobeforesecond;
-
-	printf("%lu", twobeforesecond);
-	printf(", %lu", onebeforesecond);
-	printf(", %lu", currentsecond);
-
-	for (i = 3; i < 98; i++)
+	while (i < 98)
 	{
-		twobeforefirst = onebeforefirst;
-		twobeforesecond = onebeforesecond;
+		next = a + b;
+		a = b;
+		b = next;
+		printf("%lu", next);
 
-		onebeforefirst = currentfirst;
-		onebeforesecond = currentsecond;
-
-		currentfirst = twobeforefirst + onebeforefirst;
-		currentsecond = twobeforesecond + onebeforesecond;
-
-		if (currentsecond >= MAXULI9)
-		{
-			currentfirst++;
-			currentsecond -= MAXULI9;
-		}
-
-		if (currentfirst != 0)
-			printf(", %lu%010lu", currentfirst, currentsecond);
-		else
-			printf(", %lu", currentsecond);
+		if (i < 97)
+			printf(", ");
+		i++;
 	}
-	printf("\n");
+	putchar('\n');
 	return (0);
 }
