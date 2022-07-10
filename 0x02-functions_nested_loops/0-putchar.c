@@ -1,20 +1,15 @@
-#include <stdio.h>
-/*
- *main - prints _putchar
- *
- *Return: Always 0 (Success)
- *
+#include <main.h>
+
+/**
+ * main - a simple program that outputs "_putchar"
+ * Return: 0 on success
  */
 int main(void)
 {
-  int str[] = {95, 112, 117, 116, 99, 104, 97, 114};
-  int string, st;
-  st = sizeof(str) / sizeof(int);
-  for (string = 0; string < st; string++)
-    {
-      _putchar(str[string]);
-    }
-  _putchar('\n');
+	char str[] = "_putchar\n";
+	int i = 0;
 
-  return (0);
- }
+	while (str[i] != '\0')
+		_putchar(str[i++]);
+	return (0);
+}
