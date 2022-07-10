@@ -1,17 +1,22 @@
+
 #include <stdio.h>
+
 /**
- * main - prints hexadecimal letter
- *
- * Return: 0
+ * main - Entry point
+ * Return:0
  */
 int main(void)
 {
-	char ch;
+	int i, y;
+	for (i = 0; i < 10; i++)
+	{
+		putchar (i + '0');
+	}
+	for (y = 'a'; y <= 'f'; y++)
+	{
+		putchar (y);
+	}
 
-	for (ch = '0'; ch <= '9'; ch++)
-		putchar(ch);
-	for (ch = 'a'; ch <= 'f'; ch++)
-		putchar(ch);
-	putchar('\n');
-	return (0);
+putchar('\n');
+return (0);
 }
