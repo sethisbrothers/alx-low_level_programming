@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 #define MAXULI9 10000000000
 
