@@ -1,50 +1,43 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 /**
- * main - main block
- * Description: Write a program that prints all possible
- * different combinations of two digits
- * Return: 0
+ * main - a simple program that outputs unordered
+ * combinations of two digit integers without duplicates
+ *
+ * Return: 0 on success
  */
 int main(void)
 {
-int c;
-int d;
-int e;
-int f = 0;
+	int ifirst;
+	int i;
+	int jfirst;
+	int j;
 
-while (f < 10)
-{
-	e = 0;
-	while (e < 10)
+	for (ifirst = 48; ifirst < 58; ifirst++)
 	{
-		d = 0;
-		while (d < 10)
+		for (i = 48; i < 58; i++)
 		{
-			c = 0;
-			while (c < 10)
+			j = i + 1;
+			jfirst = ifirst;
+			for (; jfirst < 58; jfirst++)
 			{
-				if (!(f == c && e == d))
+				for (; j < 58; j++)
 				{
-					putchar('0' + f);
-					putchar('0' + e);
+					putchar(ifirst);
+					putchar(i);
 					putchar(' ');
-					putchar('0' + d);
-					putchar('0' + c);
-					if (!(f + e == 18 && c + d == 17 && d == 9))
+					putchar(jfirst);
+					putchar(j);
+					if (ifirst != 57 || jfirst != 57 || i != 56 || j != 57)
 					{
 						putchar(',');
 						putchar(' ');
 					}
 				}
-				c++;
+				j = 48;
 			}
-			d++;
 		}
-		e++;
 	}
-	f++;
-}
-putchar('\n');
-return (0);
+	putchar('\n');
+	return (0);
 }
